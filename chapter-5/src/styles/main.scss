@@ -1,0 +1,49 @@
+div {
+  height: 100px;
+  width: 100px;
+  margin: 4em auto;
+}
+
+span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: red;
+}
+
+/*
+  Setting the trigger directly to span:hover would make the animation
+  trigger every time the cursor moves over span. The best practice
+  seems to be targeting the element indirectly. In this case,
+  through its parent element.
+*/
+
+div:hover span {
+  animation-name: scale-up;
+  animation-duration: 2s;
+  // animation: scale-up 2s;
+  // animation-delay: 1s;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate; 
+}
+
+/*
+  animation-play-state
+  animation-fill-mode 
+*/
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(2);
+    background: #000;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+

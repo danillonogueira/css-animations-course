@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Creating an animated text effect</title>
+  </head>
+  <body>
+    <section class="center">
+      <h1>
+        <span>My favorite food is</span>
+        <span class="words-wrapper">
+          <b class="visible"><i>s</i><i>u</i><i>s</i><i>h</i><i>i</i></b>
+          <b><i>p</i><i>i</i><i>z</i><i>z</i><i>a</i></b>
+          <b><i>s</i><i>t</i><i>e</i><i>a</i><i>k</i></b>
+        </span>
+      </h1>
+    </section>
+
+    <script>
+      setInterval(() => {
+        const visibleWord = document.querySelector('b.visible');
+        const nextWord = visibleWord.nextElementSibling;
+
+        if (nextWord) {
+          visibleWord.setAttribute('class', 'hidden');
+          nextWord.setAttribute('class', 'visible');
+        }
+      }, 4000);
+    </script>
+  </body>
+</html>

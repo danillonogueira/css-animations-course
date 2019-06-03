@@ -1,0 +1,134 @@
+*, 
+*::after, 
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #1C1D21;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  transition: transform .5s;
+  box-shadow: 0 0 50px #000;
+}
+
+.nav-open main {
+  transform: scale(.8);
+}
+
+.intro {
+  height: 100vh;
+  display: table;
+  width: 100%;
+  background: #26292F url('../assets/bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+h1 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 45px;
+  color: #FFF;
+}
+
+.nav-trigger {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 3;
+  overflow: hidden;
+  color: transparent;
+  white-space: no-wrap;
+  text-indent: 100%;
+  height: 44px;
+  width: 44px;
+}
+
+.nav-trigger span,
+.nav-trigger span::before,
+.nav-trigger span::after {
+  position: absolute;
+  height: 4px;
+  width: 36px;
+  background: #999999;
+}
+
+.nav-trigger span {
+  // top: calc(50% - 2px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background .3s;
+}
+
+.nav-trigger span::before,
+.nav-trigger span::after {
+  content: '';
+  top: 0;
+  left: 0;
+  transition: background .3s, transform .3s;
+}
+
+.nav-trigger span::before {
+  transform: translateY(-12px);
+}
+
+.nav-trigger span::after {
+  transform: translateY(12px);
+}
+
+.nav-trigger:hover span,
+.nav-trigger:hover span::before,
+.nav-trigger:hover span::after {
+  background: #fff;
+}
+
+.nav-open .nav-trigger span {
+  background: transparent;
+}
+
+.nav-open .nav-trigger span::before,
+.nav-open .nav-trigger span::after {
+  background: #1F2B3D;
+}
+
+.nav-open .nav-trigger span::before {
+  transform: rotate(-45deg);
+}
+
+.nav-open .nav-trigger span::after {
+  transform: rotate(45deg);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #1C1D21;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s, visibility .5s;
+}
+
+.nav-open .overlay {
+  opacity: .6;
+  visibility: visible;
+}
+
+.nav-container {
+  display: none;
+}

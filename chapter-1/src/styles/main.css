@@ -1,0 +1,22 @@
+span {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: #444;
+  margin: 4em auto;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+/*
+  There is a difference between applying transitions to the element itself
+  and to certain events.
+*/
+span:hover {
+  width: 200px;
+  height: 200px;
+  background: red;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+/*# sourceMappingURL=main.css.map */

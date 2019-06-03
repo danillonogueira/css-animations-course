@@ -1,0 +1,25 @@
+span {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: #444;
+  margin: 4em auto;
+  // transition-property: background;
+  // transition-duration: .5s;
+  // transition-delay: 1s;
+  // transition-timing-function: ease;
+  // transition: background .5s, width .5s, height .5s;
+  transition: all .5s;
+}
+
+/*
+  There is a difference between applying transitions to the element itself
+  and to certain events.
+*/
+
+span:hover {
+  width: 200px;
+  height: 200px;
+  background: red;
+  transition: all 2s;
+}
